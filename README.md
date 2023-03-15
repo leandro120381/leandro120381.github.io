@@ -1,2 +1,2 @@
-# leandro120381.github.io
-Entrega
+# primer.entrega
+Esta es mi primer entrega del CV para la corrección del mismo

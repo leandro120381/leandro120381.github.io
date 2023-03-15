@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="sp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Estilos en CSS -->
+    <link rel="stylesheet" href="css/estilos.css" />
+
+    <!-- Iconos -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="icons/favicon-32x32.png"
+    />
+
+    <!-- CSS Animado -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>Leandro Martinez  |  WEB</title>
+  </head>
+
+  <body>
+    <!-- Barra de Navegación -->
+    <nav>
+      <h1>Leandro Martinez</h1>
+      <ul class="navigation">
+        <li><a href="#about" class="nav-link">Acerca de mí</a></li>
+        <li><a href="#skills" class="nav-link">Experiencia</a></li>
+        <li><a href="#projects" class="nav-link">Proyectos</a></li>
+        <li><a href="#contact" class="nav-link">Contacto</a></li>
+      </ul>
+      <button class="burger-menu" id="burger-menu">
+        <ion-icon class="bars" name="menu-outline"></ion-icon>
+        
+      </button>
+    </nav>
+    
+    <p></p>
+
+<!-- Descargar un fichero en caso de necesidad 
+
+    <a href="/README.md" download="fichero.pdf">Descarga el fichero README</a>
+    
+-->
+
+    <!-- Sección Principal -->
+    <section class="hero" id="about">
+      <img
+        src="images/Perfil.jpg"
+        alt="Foto de Perfil de Leandro"
+        loading="lazy"
+        class="hero-img"
+      />
+      <div class="bio animate__animated animate__shakeX">
+        <h2 class="bio-title">Acerca de mí</h2>
+        <p class="bio-text">
+          Mi nombre es Leandro Martinez, nací en la ciudad de
+          Mar del Plata (provincia de Buenos Aires), un 12 de
+          Marzo de 1981. Actualmente tengo 41 años y trabajo
+          en una empresa de transportes de mi ciudad, en el
+          departamento de sistemas. 
+          Mi labor principal es el mantenimiento preventivo
+          de las 43 computadoras que se encuentran en dicho
+          establecimiento y hacer programas que me demanden
+          desde la gerencia en lenguaje Visual Basic 6.0 
+        </p>
+      </div>
+    </section>
+
+    <!-- Más acerca de mí -->
+    <section class="more-about">
+      <h2>Más acerca de mí</h2>
+      <p>
+        -Técnico Electrónico
+      </p>
+      <p>
+        -Analista de Sistemas
+      </p>
+      <p>
+        -Traductor de Ingés y Alemán Técnico
+      </p>
+    </section>
+
+    <!-- Sección Habilidades -->
+    <section class="skills" id="skills">
+      <h2 class="skill-header">Mis mejores habilidades</h2>
+
+      <div class="skills-wrapper">
+        <div class="first-set animate__animated animate__pulse">
+          <img
+            src="./icons/1.jpg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="./icons/2.jpg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="./icons/3.jpg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+        </div>
+
+        <div class="second-set animate__animated animate__pulse">
+          <img
+            src="./icons/4.jpg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="./icons/5.jpg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="./icons/6.jpg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section class="projects" id="projects">
+      <h2 class="projects-title">Proyectos recientes propios</h2>
+      <div class="projects-container">
+        <div class="project-container project-card">
+          <a href="images/BOLETERAS.jpg" target="_blank"><img 
+            src="images/BOLETERAS.jpg" 
+            alt="SOFT BOLETERAS"
+            loading="lazy"
+            class="project-pic"
+          /></a>
+          <h1> .</h1>
+          <h3 class="project-title">CONTROL DE VENTA DE BOLETOS</h3>
+          <p class="project-details">
+            Este sistema nos permite agrupar por secciones, controlar y proyectar la venta de boletos de una empresa de transporte. 
+          </p>
+          <a href="images/BOLETERAS.jpg" target="_blank" class="project-link">Más detalles...</a>
+        </div>
+        <div class="project-container project-card">
+          <a href="images/PRESTASIS.jpg" target="_blank"><img
+            src="images/PRESTASIS.jpg"
+            alt="SISTEMA DE PRESTAMOS"
+            loading="lazy"
+            class="project-pic"
+          /></a>
+          <h1> .</h1>
+          <h3 class="project-title">GENERACION DE PRESTAMOS</h3>
+          <p class="project-details">
+            Este sistema nos permite generar adelantos de sueldo a pedido del administrador listos para ser cancelados automaticamente mediante los recibos de sueldos.
+          </p>
+          <a href="images/PRESTASIS.jpg" target="_blank" class="project-link">Más detalles...</a>
+        </div>
+        <div class="project-container project-card">
+          <a href="images/SUBE.jpg" target="_blank"><img
+            src="images/SUBE.jpg"
+            alt="SISTEMA SUBE"
+            loading="lazy"
+            class="project-pic"
+          /></a>
+          <h1> .</h1>
+          <h3 class="project-title">VENTA DE TARJETAS SUBE</h3>
+          <p class="project-details">
+            Este sistema nos permite egresar y tener un total control de las tarjetas SUBE egresadas a todos los puestos de venta de una red de carga. 
+          </p>
+          <a href="images/SUBE.jpg" target="_blank" class="project-link">Más detalles...</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Comunicate -->
+    <section class="contact" id="contact">
+      <h2>Comunicate conmigo</h2>
+      <div class="contact-form-container">
+        <div class="contact-form">
+          <form action="https://formspree.io/f/xyylnggw" method="POST">
+            <div class="form-control">
+              <label for="name">Nombre</label>
+              <input
+                type="text"
+                id="name"
+                name="sender-name"
+                placeholder="Ingrese su nombre"
+                class="input-field"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="email">E-Mail</label>
+              <input
+                type="email"
+                id="email"
+                name="sender-email"
+                placeholder="Ingrese su correo electrónico"
+                class="input-field"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="message">Mensaje</label>
+              <textarea
+                id="message"
+                cols="60"
+                rows="10"
+                placeholder="Ingrese su mensaje"
+                name="message"
+                class="input-field"
+                required
+              ></textarea>
+            </div>
+            <input
+              type="submit"
+              value="Enviar mensaje a Leandro"
+              id="submit-btn"
+              class="submit-btn"
+            />
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cuentas a Redes Sociales -->
+    <div class="socials">
+      <a href="https://twitter.com/?lang=es" target="_blank"
+        ><img
+          src="icons/Tweeter.gif"
+          alt="Twitter"
+          loading="lazy"
+          class="socicon"
+      /></a>
+      <a href="https://www.instagram.com/" target="_blank"
+        ><img
+          src="icons/Instagram.gif"
+          alt="Instagram"
+          loading="lazy"
+          class="socicon"
+      /></a>
+      <a href="https://ar.linkedin.com/" target="_blank"
+        ><img
+          src="icons/Linkedin.gif"
+          alt="Linkedin"
+          loading="lazy"
+          class="socicon"
+      /></a>
+      <a href="https://github.com/" target="_blank"
+        ><img src="icons/Github.gif" alt="Github" class="socicon"
+      /></a>
+    </div>
+
+    <!-- Scroll para arriba -->
+    <i class="scroll-up" id="scroll-up"
+      ><img
+        src="icons/Flechita.gif"
+        class="socicon up-arrow"
+        alt=""
+    /></i>
+
+    <!-- Pie de Página -->
+    <footer>
+      <p class="copy">&copy; Copyright 2023</p>
+      <p class="copy">
+        Hecho con Visual Studio Code por 
+        <a href="https://facebook.com/leandro.120381" target="_blank"
+          >Jocker_MDQ (NET)</a
+        >
+      </p>
+    </footer>
+
+    <!-- Web de Script -->
+    <script src="js/app.js"></script>
+
+    <!-- Script de Iconos -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
