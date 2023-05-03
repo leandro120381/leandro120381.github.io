@@ -6,7 +6,7 @@
 
 body {
 	font-family: Arial, sans-serif;
-	font-size: 16px;
+	font-size: 12px;
 	line-height: 1.5;
     background-color: #f1f1f1;
 	/* background-image: url(Fondo.jpg); */ 
@@ -27,7 +27,7 @@ header img {
 h1,h4,h5  {
 	text-align: center;
 	margin-top: 50px;
-	font-weight:200;
+	font-weight:100;
 }
 
 .container {
@@ -42,7 +42,7 @@ h1,h4,h5  {
 	background-color: #f9f9f9;
 	border: 1px solid #ddd;
 	padding: 5px;
-	margin-bottom: 20px;
+	margin-bottom: 14px;
 }
 
 .name {
