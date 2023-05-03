@@ -9,7 +9,7 @@ body {
 	font-size: 16px;
 	line-height: 1.5;
     background-color: #f1f1f1;
-    /* background-image: url("Fondo.jpg"); */
+    background-image: url(Fondo.jpg); 
 }
 
 header {
@@ -17,6 +17,7 @@ header {
 	text-align: center;
 	padding: 20px;
 	position: relative;
+	background-image: url(Fondo.jpg); 
 }
 
 header img {
@@ -26,6 +27,7 @@ header img {
 h1,h4,h5  {
 	text-align: center;
 	margin-top: 50px;
+	font-weight:200;
 }
 
 .container {
