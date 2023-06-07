@@ -45,26 +45,26 @@ img{
 }
 .texto-encima{
     
-    -webkit-text-stroke: 1px rgb(255, 238, 0);
-    color: transparent; 
+    
+    color: rgb(233, 233, 233); 
     background-color: #000;
     font: 100% sans-serif;
     position: absolute;
-    top: 20px;
-    left: 20px;
-    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
-    font-size: 14px; 
+    top: 33px;
+    left: 30px;
+    font-family: Arial, Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+    font-size: 16px; 
     font-weight: 100; 
     text-align: center; 
-    background: #5c7dd1; 
+    background: #636363; 
     margin: 0 0 15px; 
     overflow: hidden; 
     padding: 15px; 
     border-radius: 35px 0px 35px 0px; 
     -moz-border-radius: 35px 0px 35px 0px; 
     -webkit-border-radius: 35px 0px 35px 0px; 
-    border: 1px solid #ffffff;}
-}
+    border: 1px solid #000000;}
+
 
 
 /*----------- CAJA ----------- */
