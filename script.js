@@ -1,5 +1,3 @@
-// script.js
-
 // Función para obtener la fecha y hora actual en el formato dd/mm/aaaa hh:mm:ss
 function obtenerFechaHoraActual() {
     const now = new Date();
@@ -22,15 +20,15 @@ window.onload = function() {
 
 // Función para cancelar y limpiar el formulario
 function cancelar() {
-    document.getElementById('formulario').reset();  // Limpiar formulario
-    document.getElementById('fecha-hora').value = obtenerFechaHoraActual();  // Reestablecer fecha
+    document.getElementById('formulario').reset();
+    document.getElementById('fecha-hora').value = obtenerFechaHoraActual();
 }
 
 // Función para enviar los datos por WhatsApp
 function enviarDatos(event) {
-    event.preventDefault(); // Evitar que se envíe el formulario
+    event.preventDefault(); // Evitar que se recargue la página
 
-    // Obtener los valores de los campos
+    // Obtener los valores del formulario
     const inspector = document.getElementById('inspector').value;
     const fechaHora = document.getElementById('fecha-hora').value;
     const empresa = document.getElementById('empresa').value;
@@ -40,7 +38,7 @@ function enviarDatos(event) {
     const legajo = document.getElementById('legajo').value;
     const detalle = document.getElementById('detalle').value;
 
-    // Formatear el mensaje para enviar por WhatsApp
+    // Crear mensaje
     const mensaje = `
 Inspector: ${inspector}
 Fecha y Hora: ${fechaHora}
@@ -52,7 +50,18 @@ Legajo: ${legajo}
 Detalle: ${detalle}
     `;
 
-    // Codificar el mensaje para la URL de WhatsApp
+    // Codificar y construir enlace de WhatsApp
+    const mensajeCodificado = encodeURIComponent(mensaje.trim());
+    const numero = '542234171729'; // en formato internacional sin "+" ni espacios
+    const url = `https://wa.me/${numero}?text=${mensajeCodificado}`;
+
+    // Redirigir a WhatsApp
+    window.location.href = url;
+
+    // Alternativa más segura si se quiere abrir en nueva pestaña:
+    // window.open(url, '_blank');
+}
+
     const mensajeCodificado = encodeURIComponent(mensaje.trim());
 
     // Redirigir a WhatsApp Web (funciona también en móviles con app instalada)
