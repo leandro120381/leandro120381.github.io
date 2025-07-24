@@ -1,54 +1,108 @@
+/* styles.css */
+
 body {
     font-family: Arial, sans-serif;
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-blur: 10px; /* Puedes utilizar una biblioteca CSS para el efecto de desenfoque, como 'backdrop-filter' */
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f4f4f4;
     height: 100vh;
 }
 
-.login-container {
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
-    border-radius: 5px;
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 480px;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     text-align: center;
-    width: 80%; /* Hace que el contenedor sea responsivo */
-    max-width: 400px; /* Limita el ancho máximo del contenedor */
+}
+
+h1 {
+    font-size: 1.5em;
+    color: #333;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 15px;
 }
 
 label {
-    font-weight: bold;
-    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+    text-align: left;
 }
 
-input {
-    width: 100%;
+input, select, textarea {
     padding: 10px;
-    margin-top: 5px;
+    font-size: 1rem;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
+    height: 80px;
 }
 
 button {
-    background-color: #007BFF;
-    color: #fff;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
     border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #45a049;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        width: 90%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NUEVO: campos de ancho completo */
+.full-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.full-field button {
+    width: 100%;
 }
