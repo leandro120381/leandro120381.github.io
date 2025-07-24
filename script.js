@@ -42,20 +42,19 @@ function enviarDatos(event) {
 
     // Formatear el mensaje para enviar por WhatsApp
     const mensaje = `
-        Inspector: ${inspector}
-        Fecha y Hora: ${fechaHora}
-        Empresa: ${empresa}
-        Interno: ${interno}
-        Línea: ${linea}
-        Chofer: ${chofer}
-        Legajo: ${legajo}
-        Detalle: ${detalle}
+Inspector: ${inspector}
+Fecha y Hora: ${fechaHora}
+Empresa: ${empresa}
+Interno: ${interno}
+Línea: ${linea}
+Chofer: ${chofer}
+Legajo: ${legajo}
+Detalle: ${detalle}
     `;
 
     // Codificar el mensaje para la URL de WhatsApp
+    const mensajeCodificado = encodeURIComponent(mensaje.trim());
 
-    const mensajeCodificado = encodeURIComponent(mensaje);
-  window.location.href = `whatsapp://send?phone=${542234171729}&text=${mensajeCodificado}`;
-    
-    
-  
+    // Redirigir a WhatsApp Web (funciona también en móviles con app instalada)
+    window.location.href = `https://wa.me/542234171729?text=${mensajeCodificado}`;
+}
