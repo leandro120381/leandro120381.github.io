@@ -54,15 +54,8 @@ function enviarDatos(event) {
 
     // Codificar el mensaje para la URL de WhatsApp
 
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     const mensajeCodificado = encodeURIComponent(mensaje);
-if (isMobile) {
-  // Abre directamente la app en celulares
   window.location.href = `whatsapp://send?phone=${542234171729}&text=${mensajeCodificado}`;
-} else {
-  // En PC abre WhatsApp Web
-  window.open(`https://wa.me/${542234171729}?text=${mensajeCodificado}`, '_blank');
-}
     
     
   
