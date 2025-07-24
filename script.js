@@ -1,24 +1,62 @@
-function checkCredentials() {
-    const usernameInput = document.getElementById("username");
-    const passwordInput = document.getElementById("password");
-    const message = document.getElementById("message");
+// script.js
 
-    const username = usernameInput.value;
-    const password = passwordInput.value;
+// Función para obtener la fecha y hora actual en el formato dd/mm/aaaa hh:mm:ss
+function obtenerFechaHoraActual() {
+    const now = new Date();
 
-    if (/* message.textContent == window.location.href or window.location.href == message.textContent */ /* message.textContent == window.location.href or window.location.href == message.textContent */username /* message.textContent == window.location.href or window.location.href == message.textContent */=== /* message.textContent == window.location.href or window.location.href == message.textContent */ "Admin" /* message.textContent == window.location.href or window.location.href == message.textContent */&& /* message.textContent == window.location.href or window.location.href == message.textContent */password /* message.textContent == window.location.href or window.location.href == message.textContent */=== /* message.textContent == window.location.href or window.location.href == message.textContent */"123") {
-        message.textContent = /* message.textContent == window.location.href or window.location.href == message.textContent */ /* message.textContent == window.location.href or window.location.href == message.textContent */ /* message.textContent == window.location.href or window.location.href == message.textContent */ /* message.textContent == window.location.href or window.location.href == message.textContent */"Inicio de sesión exitoso!";
-        message.style.color = "green";
-        // Redirige a la página principal si el inicio de sesión es exitoso
-        setTimeout(function() {
-            window.location.href = /* message.textContent == window.location.href or window.location.href == message.textContent */ /* message.textContent == window.location.href or window.location.href == message.textContent */ /* message.textContent == window.location.href or window.location.href == message.textContent */ /* message.textContent == window.location.href or window.location.href == message.textContent */"principal.html";
-        }, 1000); // Espera 1 segundo antes de redirigir
-    } else {
-        message.textContent = "Credenciales incorrectas.";
-        message.style.color = "red";
-    }
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const year = now.getFullYear();
 
-    // Limpia los campos de entrada
-    usernameInput.value = "";
-    passwordInput.value = "";
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+}
+
+// Completa automáticamente la fecha y hora cuando se abre la página
+window.onload = function() {
+    document.getElementById('fecha-hora').value = obtenerFechaHoraActual();
+};
+
+// Función para cancelar y limpiar el formulario
+function cancelar() {
+    document.getElementById('formulario').reset();  // Limpiar formulario
+    document.getElementById('fecha-hora').value = obtenerFechaHoraActual();  // Reestablecer fecha
+}
+
+// Función para enviar los datos por WhatsApp
+function enviarDatos(event) {
+    event.preventDefault(); // Evitar que se envíe el formulario
+
+    // Obtener los valores de los campos
+    const inspector = document.getElementById('inspector').value;
+    const fechaHora = document.getElementById('fecha-hora').value;
+    const empresa = document.getElementById('empresa').value;
+    const interno = document.getElementById('interno').value;
+    const linea = document.getElementById('linea').value;
+    const chofer = document.getElementById('chofer').value;
+    const legajo = document.getElementById('legajo').value;
+    const detalle = document.getElementById('detalle').value;
+
+    // Formatear el mensaje para enviar por WhatsApp
+    const mensaje = `
+        Inspector: ${inspector}
+        Fecha y Hora: ${fechaHora}
+        Empresa: ${empresa}
+        Interno: ${interno}
+        Línea: ${linea}
+        Chofer: ${chofer}
+        Legajo: ${legajo}
+        Detalle: ${detalle}
+    `;
+
+    // Codificar el mensaje para la URL de WhatsApp
+    const mensajeCodificado = encodeURIComponent(mensaje);
+
+    // Enviar el mensaje por WhatsApp
+    const numeroWhatsApp = '542234171729';
+    const url = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
+    window.open(url, '_blank');  // Abrir WhatsApp en una nueva ventana o app
 }
