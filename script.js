@@ -59,6 +59,7 @@ Detalle: ${detalle}`;
       } else {
         window.open(`https://wa.me/${telefono}?text=${mensajeCodificado}`, "_blank");
       }
+    setTimeout(() => location.reload(), 1000);
     }
 
     document.getElementById("formulario").addEventListener("submit", enviarDatos);
