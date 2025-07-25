@@ -25,6 +25,7 @@ window.onload = function() {
 function cancelar() {
     document.getElementById('formulario').reset();
     document.getElementById('fecha-hora').value = obtenerFechaHoraActual();
+    location.reload();
 }
 
     // Enviar por WhatsApp
