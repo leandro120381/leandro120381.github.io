@@ -37,13 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("fechaHora").value = formatted;
     } catch (error) {
       console.error("Error:", error);
-      alert("? Error al guardar. Revisa tu conexión o el token de acceso.");
+      alert("? Error al guardar. Revisa tu conexiÃ³n o el token de acceso.");
     }
   });
 });
 
 async function saveToGitHub(nuevoParte) {
-  const token = 'abcdefghijklmnñopqrstuvwxyz'; // ? CAMBIA ESTO
+  const token = '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'; // ? CAMBIA ESTO
   const owner = 'leandro120381';           // ? CAMBIA ESTO
   const repo = 'leandro120381.github.io';               // ? CAMBIA ESTO
   const filePath = 'partes.json';
@@ -61,7 +61,7 @@ async function saveToGitHub(nuevoParte) {
 
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(partes, null, 2))));
   const commitData = {
-    message: `Añadir parte - ${nuevoParte.inspector} - ${nuevoParte.fechaHora}`,
+    message: `AÃ±adir parte - ${nuevoParte.inspector} - ${nuevoParte.fechaHora}`,
     content: content,
     sha: fileData.sha
   };
@@ -79,4 +79,5 @@ async function saveToGitHub(nuevoParte) {
     const err = await putResponse.json();
     throw new Error(`GitHub error: ${err.message}`);
   }
+
 }
