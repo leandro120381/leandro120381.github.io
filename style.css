@@ -79,7 +79,6 @@ button:hover {
   opacity: 0.9;
 }
 
-/* Responsive */
 @media (max-width: 480px) {
   .container {
     padding: 15px;
