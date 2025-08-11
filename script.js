@@ -31,60 +31,25 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     try {
-      await saveToGitHub(data);
-      alert("? Parte guardado correctamente.");
-      document.getElementById("formParte").reset();
-      document.getElementById("fechaHora").value = formatted;
+      const response = await fetch('https://docs.google.com/spreadsheets/d/1xxcYcCu-zcWeXNFPycGa3hrQr-o6yc3IsU8A5uMkOI8/edit?usp=sharing', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      const result = await response.json();
+      if (result.result === "ok") {
+        alert("✅ Parte guardado correctamente.");
+        document.getElementById("formParte").reset();
+        document.getElementById("fechaHora").value = formatted;
+      } else {
+        throw new Error(result.error);
+      }
     } catch (error) {
       console.error("Error:", error);
-      alert("? Error al guardar. Revisa tu conexión o el token de acceso.");
+      alert("❌ Error al guardar. Revisa tu conexión.");
     }
   });
 });
-
-async function saveToGitHub(nuevoParte) {
-  const token = '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';
-  const owner = 'leandro120381';
-  const repo = 'leandro120381.github.io';
-  const filePath = 'partes.json';
-  const url = `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`;
-
-  const response = await fetch(url);
-  const fileData = await response.json();
-
-  let partes = [];
-  if (response.ok) {
-    partes = JSON.parse(atob(fileData.content));
-  }
-
-  partes.push(nuevoParte);
-
-  const content = btoa(unescape(encodeURIComponent(JSON.stringify(partes, null, 2))));
-  const commitData = {
-    message: `Añadir parte - ${nuevoParte.inspector} - ${nuevoParte.fechaHora}`,
-    content: content,
-    sha: fileData.sha
-  };
-
-  const putResponse = await fetch(url, {
-    method: 'PUT',
-    headers: {
-      'Authorization': `token ${token}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(commitData)
-  });
-
-  if (!putResponse.ok) {
-    const err = await putResponse.json();
-    throw new Error(`GitHub error: ${err.message}`);
-  }
-
-}
-
-
-
-
-
-
-
