@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FORMULARIO PARTES</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>FORMULARIO PARTES</h1>
+
+    <form id="formParte">
+      <label for="inspector">Inspector:</label>
+      <select id="inspector" required>
+        <option value="">Seleccionar inspector</option>
+        <option value="BACI, Gustavo Hernan">BACI, Gustavo Hernan</option>
+        <option value="BROWN, Matias Raul">BROWN, Matias Raul</option>
+        <option value="BUSTOS, Cristian Gabriel">BUSTOS, Cristian Gabriel</option>
+        <option value="CORDOBA, Rodolfo Ariel">CORDOBA, Rodolfo Ariel</option>
+        <option value="D'ANDREA, Juan Jose">D'ANDREA, Juan Jose</option>
+        <option value="DI GIALLEONARDO, Pablo Andres">DI GIALLEONARDO, Pablo Andres</option>
+        <option value="GALVAN, Leonardo">GALVAN, Leonardo</option>
+        <option value="GAYOZO, Juan Carlos">GAYOZO, Juan Carlos</option>
+        <option value="GUTIERREZ, Hector Fabian">GUTIERREZ, Hector Fabian</option>
+        <option value="HERNANDEZ, Angel Mariano Gabriel">HERNANDEZ, Angel Mariano Gabriel</option>
+        <option value="LAMBERTI, Nestor Gustavo">LAMBERTI, Nestor Gustavo</option>
+        <option value="LEMMI, Bernardo Esteban">LEMMI, Bernardo Esteban</option>
+        <option value="LENCINA, Carlos Horacio">LENCINA, Carlos Horacio</option>
+        <option value="MARCHESE, Roberto Daniel">MARCHESE, Roberto Daniel</option>
+        <option value="MARTINEZ, Leandro">MARTINEZ, Leandro</option>
+        <option value="MARTINEZ, Pedro Roberto">MARTINEZ, Pedro Roberto</option>
+        <option value="MASTRANGELO, Carlos Gustavo">MASTRANGELO, Carlos Gustavo</option>
+        <option value="MORMANDO, Sergio Antonio">MORMANDO, Sergio Antonio</option>
+        <option value="MUNZ, Alberto Daniel">MUNZ, Alberto Daniel</option>
+        <option value="NUÑEZ, David Alejandro">NUÑEZ, David Alejandro</option>
+        <option value="OZAN, Jonatan Gabriel">OZAN, Jonatan Gabriel</option>
+        <option value="PALAZZO, Daniel Alejandro">PALAZZO, Daniel Alejandro</option>
+        <option value="PENNISI, Damian Alfredo">PENNISI, Damian Alfredo</option>
+        <option value="RODRIGUEZ, Raul Ruben">RODRIGUEZ, Raul Ruben</option>
+        <option value="RUBIANES, Edgardo Guillermo">RUBIANES, Edgardo Guillermo</option>
+        <option value="SALINAS, Sebastian Dario">SALINAS, Sebastian Dario</option>
+        <option value="TAPIA, Jorge Atilio">TAPIA, Jorge Atilio</option>
+        <option value="TORRILLA, Marcelo Jorge">TORRILLA, Marcelo Jorge</option>
+      </select>
+
+      <label for="fechaHora">Fecha y Hora:</label>
+      <input type="text" id="fechaHora" readonly required />
+
+      <label for="empresa">Empresa:</label>
+      <select id="empresa" required>
+        <option value="">Seleccionar empresa</option>
+        <option value="PERALTA RAMOS">PERALTA RAMOS</option>
+        <option value="12 DE OCTUBRE">12 DE OCTUBRE</option>
+        <option value="COSTA AZUL">COSTA AZUL</option>
+      </select>
+
+      <label for="interno">Interno (1-999):</label>
+      <input type="number" id="interno" min="1" max="999" required />
+
+      <label for="linea">Línea (1-999):</label>
+      <input type="number" id="linea" min="1" max="999" required />
+
+      <label for="legajo">Legajo del Chofer (1-9999):</label>
+      <input type="number" id="legajo" min="1" max="9999" required />
+
+      <label for="nombreChofer">Nombre Completo del Chofer:</label>
+      <input type="text" id="nombreChofer" maxlength="100" required />
+
+      <label for="detalle">Detalle de la Infracción:</label>
+      <textarea id="detalle" rows="4" maxlength="500" required></textarea>
+
+      <div class="buttons">
+        <button type="button" id="btnCancelar">Cancelar</button>
+        <button type="submit">Guardar Parte</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

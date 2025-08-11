@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reportes de Partes</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #3498db;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .print-btn {
+      margin: 20px 0;
+      padding: 12px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .print-btn:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>REPORTE DE PARTES</h1>
+    <button class="print-btn" onclick="window.print()">??? Imprimir / Guardar como PDF</button>
+    <div id="loading">Cargando partes...</div>
+    <table id="tablaPartes" style="display:none;">
+      <thead>
+        <tr>
+          <th>Fecha/Hora</th>
+          <th>Inspector</th>
+          <th>Empresa</th>
+          <th>Interno</th>
+          <th>Línea</th>
+          <th>Legajo</th>
+          <th>Chofer</th>
+          <th>Detalle</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    fetch('partes.json?t=' + new Date().getTime())
+      .then(r => {
+        if (!r.ok) throw new Error('No se pudo cargar el archivo');
+        return r.json();
+      })
+      .then(partes => {
+        const tbody = document.querySelector('#tablaPartes tbody');
+        partes.forEach(p => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${p.fechaHora}</td>
+            <td>${p.inspector}</td>
+            <td>${p.empresa}</td>
+            <td>${p.interno}</td>
+            <td>${p.linea}</td>
+            <td>${p.legajo}</td>
+            <td>${p.nombreChofer}</td>
+            <td>${p.detalle}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('tablaPartes').style.display = 'table';
+      })
+      .catch(err => {
+        document.getElementById('loading').textContent = 'Error al cargar los partes. Asegúrate de que el archivo partes.json exista.';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
