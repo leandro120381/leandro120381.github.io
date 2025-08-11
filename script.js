@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function saveToGitHub(nuevoParte) {
   const token = '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'; // ? CAMBIA ESTO
-  const owner = 'leandro120381';           // ? CAMBIA ESTO
-  const repo = 'leandro120381.github.io';               // ? CAMBIA ESTO
+  const owner = 'leandro120381.github.io';           // ? CAMBIA ESTO
+  const repo = 'leandro120381';               // ? CAMBIA ESTO
   const filePath = 'partes.json';
   const url = `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`;
 
@@ -81,4 +81,5 @@ async function saveToGitHub(nuevoParte) {
   }
 
 }
+
 
