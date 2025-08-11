@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function saveToGitHub(nuevoParte) {
-  const token = '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'; // ? CAMBIA ESTO
+  const token = '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'; // ? CAMBIA ESTO
   const owner = 'leandro120381';           // ? CAMBIA ESTO
   const repo = 'leandro120381.github.io';               // ? CAMBIA ESTO
   const filePath = 'partes.json';
@@ -81,6 +81,7 @@ async function saveToGitHub(nuevoParte) {
   }
 
 }
+
 
 
 
